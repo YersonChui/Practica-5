@@ -1,20 +1,19 @@
-// Fecha creaciÛn: 22/09/2023
-// Fecha modificaciÛn: 22/09/2023
-// N˙mero de ejericio: 1
-// Problema planteado: La informaciÛn de todos los empleados de la UCB se almacena en una variable tipo struct llamada ìempleadoî.
-// La informaciÛn con que se cuenta es: nombre, ci, departamento y salario. Realizar un programa en C++ que lea un array de estructura de los datos de N empleados e imprima los siguiente:
+// Fecha creaci√≥n: 22/09/2023
+// Fecha modificaci√≥n: 22/09/2023
+// N√∫mero de ejericio: 1
+// Problema planteado: La informaci√≥n de todos los empleados de la UCB se almacena en una variable tipo struct llamada ‚Äúempleado‚Äù.
+// La informaci√≥n con que se cuenta es: nombre, ci, departamento y salario. Realizar un programa en C++ que lea un array de estructura de los datos de N empleados e imprima los siguiente:
 #include <iostream>
 #include <string>
 using namespace std;
 
-// Definir una estructura para representar a un empleado
 struct empleado {
   string nombre;
   int ci;
   string departamento;
   float salario;
 };
-// Definir una funciÛn para leer los datos de un empleado desde el teclado
+// funci√≥n para leer los datos de un empleado
 void leer_empleado(empleado &e) {
   cout << "Ingrese el nombre del empleado: ";
   getline(cin, e.nombre);
@@ -25,14 +24,14 @@ void leer_empleado(empleado &e) {
   cout << "Ingrese el salario del empleado: ";cin >> e.salario;
   cin.ignore();
 }
-// Definir una funciÛn para mostrar los datos de un empleado por pantalla
+// funci√≥n para mostrar los datos 
 void mostrar_empleado(empleado e) {
   cout << "Nombre: " << e.nombre << endl;
   cout << "CI: " << e.ci << endl;
   cout << "Departamento: " << e.departamento << endl;
   cout << "Salario: " << e.salario << endl;
 }
-// Definir una funciÛn para calcular el promedio salarial de un array de empleados
+// funci√≥n para calcular el promedio salarial
 float promedio_salarial(empleado empleados[], int n) {
   float suma = 0;
   for (int i = 0; i < n; i++) {
@@ -40,7 +39,7 @@ float promedio_salarial(empleado empleados[], int n) {
   }
   return suma / n;
 }
-// Definir una funciÛn para calcular el promedio salarial por departamento de un array de empleados
+// para calcular el promedio salarial por departamento por un array de empleados
 float promedio_por_departamento(empleado empleados[], int n, string departamento) {
   float suma = 0;
   int contador = 0;
@@ -57,7 +56,7 @@ float promedio_por_departamento(empleado empleados[], int n, string departamento
     return -1;
   }
 }
-// Definir una funciÛn para encontrar el departamento con mayor salario en promedio de un array de empleados
+//  Encuentra el departamento con mayor salario en promedio
 string departamento_con_mayor_salario(empleado empleados[], int n) {
   string mayor_departamento = "";
   float mayor_promedio = -1;
@@ -71,7 +70,7 @@ string departamento_con_mayor_salario(empleado empleados[], int n) {
   }
   return mayor_departamento;
 }
-// Definir una funciÛn para encontrar el departamento con menor salario en promedio de un array de empleados
+// funci√≥n para encontrar el departamento con menor salario en promedio 
 string departamento_con_menor_salario(empleado empleados[], int n) {
   string menor_departamento = "";
   float menor_promedio = -1;
@@ -85,7 +84,7 @@ string departamento_con_menor_salario(empleado empleados[], int n) {
   }
   return menor_departamento;
 }
-// Definir una funciÛn para encontrar el empleado con mayor salario de un array de empleados
+//funci√≥n para encontrar el empleado con mayor salario
 empleado empleado_con_mayor_salario(empleado empleados[], int n) {
   empleado mayor_empleado = empleados[0];
   for (int i = 1; i < n; i++) {
@@ -95,7 +94,7 @@ empleado empleado_con_mayor_salario(empleado empleados[], int n) {
   }
   return mayor_empleado;
 }
-// Definir una funciÛn para encontrar el empleado con menor salario de un array de empleados
+// funci√≥n para encontrar el empleado con menor salari
 empleado empleado_con_menor_salario(empleado empleados[], int n) {
    empleado menor_empleado = empleados[0];
    for (int i =1; i < n; i++) {
@@ -106,8 +105,6 @@ empleado empleado_con_menor_salario(empleado empleados[], int n) {
    return menor_empleado;
 }
 int main() {
-
-   // Declarar una variable para almacenar el n˙mero de empleados
    int n;
    cout << "Ingrese el numero de empleados: ";cin >> n;
    cin.ignore();
